@@ -39,7 +39,7 @@
 <input type="button" value="ジオコーディン" onclick="codeAddress(spot_address[0])" style="height:30px">
     <!-- {{--    上記の処理をしてから、googleMapを読み込まないとエラーが出てくる--}} -->
     
-        <script
+    <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPbum-1zCfQ-5MckvI65yLGuBHgvA0w5c&callback=initMap&v=weekly"
       defer
     ></script>
