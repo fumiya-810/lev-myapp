@@ -15,7 +15,11 @@
 
     </head>
     <body>
-
+    <script>
+    let point_lat=35.604577;
+    let point_lng=140.123196;
+    let point_address='{{$post->address}}'
+    </script>
     <!-- maps javascript api テスト --> 
     <div id="map"></div>
     <div class="content">
@@ -37,7 +41,7 @@
     <!-- jQueryの読み込み-->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     
-    <script type="module" src="{{ asset('/js/index.js')}}"></script>
+    <script type="module" src="{{ asset('/js/show.js')}}"></script>
     <script src="{{ asset('/js/setLocation.js') }}"></script> 
 
     <script
