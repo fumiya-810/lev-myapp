@@ -25,11 +25,13 @@
         let i=0;
         let address_lat=[];//変換した緯度を格納する配列
         let address_lng=[];//変換した経度を格納する配列
+        let address_id=[];
         
         //DBから受け取った住所をjsの配列に入れる
         let spot_address=[];
         <?php foreach( $spots as $spot ): ?>
-            spot_address[i]='{{$spot->address}}'//spot_addressには問題なく住所を格納できている
+            spot_id[i]='{{$spot->id}}';
+            spot_address[i]='{{$spot->address}}';//spot_addressには問題なく住所を格納できている
             i++;
         <?php endforeach; ?>
         
@@ -48,9 +50,9 @@
         <script src="{{ asset('/js/setLocation.js') }}"></script>
         <script src="{{ asset('/js/currentLocation.js') }}"></script>
 
-
+    </br>
     @foreach($spots as $post)
-      <p>address:{{$post->address}}</p>
+      <a href="/posts/{{ $post->id }}">address:{{$post->address}}</a>
       <p>body:{{ $post->body}}</p>
     @endforeach
     

@@ -77,7 +77,9 @@ async function initMap() {
         });
         //吹き出しの追加
         infoWindow[i] = new google.maps.InfoWindow({
-            content: '<div class="sample">' + markerData[i]["name"] + "</div>", // 吹き出しに表示する内容
+           // content: '<div class="sample">' + markerData[i]["name"] + "</div>", // 吹き出しに表示する内容
+            content: '<a class="sample" href="/posts/1">' + markerData[i]["name"] + "</a>",
+            //hrefのリンクに変数を入れたい
         });
 
         markerEvent(i); // マーカーにクリックイベントを追加
