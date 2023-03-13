@@ -55,6 +55,6 @@
       <a href="/posts/{{ $post->id }}">address:{{$post->address}}</a>
       <p>body:{{ $post->body}}</p>
     @endforeach
-    
+    <a href='/posts/create'>投稿する</a>
     </body>
 </html>

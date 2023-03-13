@@ -15,17 +15,22 @@
 
     </head>
     <body>
-    <script>
-    //let point_lat=35.604577;
-    //let point_lng=140.123196;
-    let point_address='{{$post->address}}'
-    </script>
-    <!-- maps javascript api テスト --> 
-    <div id="map"></div>
     <div class="content">
-    <p>{{$post->address}}</p>
-    <p>{{$post->body}}</p>
+        <form action="/posts" method="POST">
+            @csrf
+            <div class="title">
+                <h2>住所</h2>
+                <input type="text" name="post[address]" placeholder="住所"/>
+            </div>
+            <div class="body">
+                <h2>説明文など</h2>
+                <textarea name="post[body]" placeholder="場所の説明（営業日など）"></textarea>
+            </div>
+            <input type="submit" value="store"/>
+        </form>
     </div>
+
+    <div id="map"></div>
 
     {!! Form::open(['route' => 'posts.currentLocation','method' => 'get']) !!}
     {{--隠しフォームでresult.currentLocationに位置情報を渡す--}}
@@ -41,9 +46,8 @@
     <!-- jQueryの読み込み-->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     
-    <script type="module" src="{{ asset('/js/show.js')}}"></script>
+    <script type="module" src="{{ asset('/js/create.js')}}"></script>
     <script src="{{ asset('/js/setLocation.js') }}"></script> 
-
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPbum-1zCfQ-5MckvI65yLGuBHgvA0w5c&callback=initMap&v=weekly"
       defer

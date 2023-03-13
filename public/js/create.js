@@ -1,7 +1,3 @@
-let point_lat;
-let point_lng;
-//show.blade.phpでの変数を使える。確認済み
-// Initialize and add the map
 function initMap() {
 //ジオコードオブジェクトapiへの問い合わせをするためのオブジェクト
 var geocoder = new google.maps.Geocoder();
@@ -33,7 +29,7 @@ var address = point_address;
    }
   });
  }
-  console.log(point_lng);
+  
   // lat、lngを変数で指定できるようにする
   const uluru = { lat: point_lat, lng: point_lng};
   // The map, centered at Uluru
