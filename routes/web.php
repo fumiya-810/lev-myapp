@@ -36,7 +36,14 @@ Route::get('/', [PostController::class, 'index']);
 //現在地・周辺エリアの表示画面への仮ルート
 Route::get('result', [ResultController::class, 'currentLocation'])->name('posts.currentLocation');
 
+//投稿画面のルーティング
+Route::get('/posts/create', [PostController::class, 'create']);
+
+//投稿機能のルーティング
+Route::post('/posts', [PostController::class, 'store']);
+
 //詳細画面のルーティング
 Route::get('/posts/{post}', [PostController::class ,'show']);
+
 
 require __DIR__.'/auth.php';
